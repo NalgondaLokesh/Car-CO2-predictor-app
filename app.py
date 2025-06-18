@@ -41,6 +41,10 @@ st.markdown(
         padding: 0.4em 0.8em;
         font-size: 1.05em;
     }
+    label, .stTextInput label, .stNumberInput label, .stSelectbox label {
+        color: black !important;
+        font-weight: 600;
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -52,7 +56,7 @@ model = joblib.load("Co2_model.pkl")
 st.title("🚗 Car CO₂ Emission Predictor")
 st.markdown("<h3 style='color:#191654;'>Estimate <b>CO₂ emissions (g/km)</b> using engine and fuel specifications.</h3>", unsafe_allow_html=True)
 
-# Input fields
+# Input fields with black labels
 engine_size = st.number_input("Engine Size (L)", min_value=0.0, step=0.1)
 cylinders = st.number_input("Number of Cylinders", min_value=1, step=1)
 fuel_comb = st.number_input("Fuel Consumption - Combined (L/100 km)", min_value=0.0, step=0.1)
